@@ -4,3 +4,10 @@ body {
 #input {
     background: #7fffd4;
 }
+.label_purple {
+    background: #eca0ec;
+    border: 2px solid #000000;
+}
+#question {
+    background: #f7c5a1;
+}
