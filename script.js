@@ -8,6 +8,9 @@ const third = document.getElementById('answer3');
 const forth = document.getElementById('answer4');
 const fifth = document.getElementById('answer5');
 const sixth = document.getElementById('answer6');
+const seventh = document.getElementById('answer7');
+const eight = document.getElementById('answer8');
+const ninth = document.getElementById('answer9');
 
 const A = '마음속에 떠오르는 생각이나 운율이 있는 언어로 압축하여 표현하는 문학';
 const B = '정해진 형식에 맞추어 쓴 시';
@@ -39,6 +42,9 @@ let questions = [
     D,
     E,
     F,
+    G,
+    H,
+    I,
 ]
 
 const AA = '시';
@@ -71,6 +77,9 @@ let answers = [
     DD,
     EE,
     FF,
+    GG,
+    HH,
+    II,
 ]
 
 function r1() {
@@ -101,6 +110,24 @@ function r5() {
     questions = a1.concat(a2);
     console.log(questions);
 }
+function r6() {
+    a1 = questions.slice(0, 5);
+    a2 = questions.splice(6, number-5);
+    questions = a1.concat(a2);
+    console.log(questions);
+}
+function r7() {
+    a1 = questions.slice(0, 6);
+    a2 = questions.splice(7, number-6);
+    questions = a1.concat(a2);
+    console.log(questions);
+}
+function r8() {
+    a1 = questions.slice(0, 7);
+    a2 = questions.splice(8, number-7);
+    questions = a1.concat(a2);
+    console.log(questions);
+}
 function rl() {
     questions.pop();
     console.log(questions);
@@ -111,7 +138,7 @@ let number = questions.length;
 function duplicate_check() {
     const random1 = questions[Math.floor(Math.random() * questions.length)];
     if (random1 == questions[0]) {
-        r1();
+        r1;
     }
     else if (random1 == questions[1]) {
         r2();
@@ -124,6 +151,15 @@ function duplicate_check() {
     }
     else if (random1 == questions[4]) {
         r5();
+    }
+    else if (random1 == questions[5]) {
+        r6();
+    }
+    else if (random1 == questions[6]) {
+        r7();
+    }
+    else if (random1 == questions[7]) {
+        r8();
     }
     else {
         rl();
@@ -141,6 +177,15 @@ function duplicate_check() {
     else if (random2 == questions[3]) {
         r4();
     }
+    else if (random2 == questions[4]) {
+        r5();
+    }
+    else if (random2 == questions[5]) {
+        r6();
+    }
+    else if (random2 == questions[6]) {
+        r7();
+    }
     else {
         rl();
     }
@@ -154,6 +199,15 @@ function duplicate_check() {
     else if (random3 == questions[2]) {
         r3();
     }
+    else if (random3 == questions[3]) {
+        r4();
+    }
+    else if (random3 == questions[4]) {
+        r5();
+    }
+    else if (random3 == questions[5]) {
+        r6();
+    }
     else {
         rl();
     }
@@ -164,12 +218,30 @@ function duplicate_check() {
     else if (random4 == questions[1]) {
         r2();
     }
+    else if (random4 == questions[2]) {
+        r3();
+    }
+    else if (random4 == questions[3]) {
+        r4();
+    }
+    else if (random4 == questions[4]) {
+        r5();
+    }
     else {
         rl();
     }
     const random5 = questions[Math.floor(Math.random() * questions.length)];
     if (random5 == questions[0]) {
         r1();
+    }
+    else if (random5 == questions[1]) {
+        r2();
+    }
+    else if (random5 == questions[2]) {
+        r3();
+    }
+    else if (random5 == questions[3]) {
+        r4();
     }
     else {
         rl();
@@ -178,12 +250,45 @@ function duplicate_check() {
     if (random6 == questions[0]) {
         r1();
     }
+    else if (random6 == questions[1]) {
+        r2();
+    }
+    else if (random6 == questions[2]) {
+        r3();
+    }
+    else {
+        rl();
+    }
+    const random7 = questions[Math.floor(Math.random() * questions.length)];
+    if (random7 == questions[0]) {
+        r1();
+    }
+    else if (random7 == questions[1]) {
+        r2();
+    }
+    else {
+        rl();
+    }
+    const random8 = questions[Math.floor(Math.random() * questions.length)];
+    if (random8 == questions[0]) {
+        r1();
+    }
+    else {
+        rl();
+    }
+    const random9 = questions[Math.floor(Math.random() * questions.length)];
+    if (random9 == questions[0]) {
+        r1();
+    }
     first.innerHTML = random1;
     second.innerHTML = random2;
     third.innerHTML = random3;
     forth.innerHTML = random4;
     fifth.innerHTML = random5;
     sixth.innerHTML = random6;
+    seventh.innerHTML = random7;
+    eight.innerHTML = random8;
+    ninth.innerHTML = random9;
 }
 function change() {
     lo += 1;
