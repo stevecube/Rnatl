@@ -4,6 +4,9 @@ body {
 #input {
     background: #7fffd4;
 }
+dt {
+    width: fit-content;
+}
 .label_purple {
     background: #eca0ec;
     border: 2px solid #000000;

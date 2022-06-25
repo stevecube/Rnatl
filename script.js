@@ -11,6 +11,8 @@ const sixth = document.getElementById('answer6');
 const seventh = document.getElementById('answer7');
 const eight = document.getElementById('answer8');
 const ninth = document.getElementById('answer9');
+const tenth = document.getElementById('answer10');
+let a;
 
 const A = '마음속에 떠오르는 생각이나 운율이 있는 언어로 압축하여 표현하는 문학';
 const B = '정해진 형식에 맞추어 쓴 시';
@@ -45,6 +47,7 @@ let questions = [
     G,
     H,
     I,
+    J,
 ]
 
 const AA = '시';
@@ -80,205 +83,307 @@ let answers = [
     GG,
     HH,
     II,
+    JJ,
 ]
-
-function r1() {
-    questions.shift();
-    console.log(questions);
+function numcheck(num) {
+    if (num == 'first') {
+        questions.shift();
+        console.log(questions, num);
+    }
+    else if (num == 1) {
+        a1 = questions.slice(0, 1);
+        a2 = questions.splice(2, number-1);
+        a = a1.concat(a2);
+        questions = a;
+        console.log(questions, num);
+    }
+    else if (num == 2) {
+        a1 = questions.slice(0, 2);
+        a2 = questions.splice(3, number-2);
+        a = a1.concat(a2);
+        questions = a;
+        console.log(questions, num);
+    }
+    else if (num == 3) {
+        a1 = questions.slice(0, 2);
+        a2 = questions.splice(3, number-2);
+        a = a1.concat(a2);
+        questions = a;
+        console.log(questions, num);
+    }
+    else if (num == 4) {
+        a1 = questions.slice(0, 3);
+        a2 = questions.splice(4, number-3);
+        a = a1.concat(a2);
+        questions = a;
+        console.log(questions, num);
+    }
+    else if (num == 5) {
+        a1 = questions.slice(0, 4);
+        a2 = questions.splice(5, number-4);
+        a = a1.concat(a2);
+        questions = a;
+        console.log(questions, num);
+    }
+    else if (num == 6) {
+        a1 = questions.slice(0, 5);
+        a2 = questions.splice(6, number-5);
+        a = a1.concat(a2);
+        questions = a;
+        console.log(questions, num);
+    }
+    else if (num == 7) {
+        a1 = questions.slice(0, 6);
+        a2 = questions.splice(7, number-6);
+        a = a1.concat(a2);
+        questions = a;
+        console.log(questions, num);
+    }
+    else if (num == 8) {
+        a1 = questions.slice(0, 7);
+        a2 = questions.splice(8, number-7);
+        a = a1.concat(a2);
+        questions = a;
+        console.log(questions, num);
+    }
+    else if (num == 'last') {
+        questions.pop();
+        console.log(questions, num);
+    }
 }
-function r2() {
-    a1 = questions.slice(0, 1);
-    a2 = questions.splice(2, number-1);
-    questions = a1.concat(a2);
-    console.log(questions);
-}
-function r3() {
-    a1 = questions.slice(0, 2);
-    a2 = questions.splice(3, number-2);
-    questions = a1.concat(a2);
-    console.log(questions);
-}
-function r4() {
-    a1 = questions.slice(0, 3);
-    a2 = questions.splice(4, number-3);
-    questions = a1.concat(a2);
-    console.log(questions);
-}
-function r5() {
-    a1 = questions.slice(0, 4);
-    a2 = questions.splice(5, number-4);
-    questions = a1.concat(a2);
-    console.log(questions);
-}
-function r6() {
-    a1 = questions.slice(0, 5);
-    a2 = questions.splice(6, number-5);
-    questions = a1.concat(a2);
-    console.log(questions);
-}
-function r7() {
-    a1 = questions.slice(0, 6);
-    a2 = questions.splice(7, number-6);
-    questions = a1.concat(a2);
-    console.log(questions);
-}
-function r8() {
-    a1 = questions.slice(0, 7);
-    a2 = questions.splice(8, number-7);
-    questions = a1.concat(a2);
-    console.log(questions);
-}
-function rl() {
-    questions.pop();
-    console.log(questions);
-}
-question.innerHTML = questions[0];
+question.innerHTML = answers[0];
 console.log(questions);
 let number = questions.length;
 function duplicate_check() {
     const random1 = questions[Math.floor(Math.random() * questions.length)];
     if (random1 == questions[0]) {
-        r1;
+        num = 'first';
+        numcheck(num);
     }
     else if (random1 == questions[1]) {
-        r2();
+        num = 1;
+        numcheck(num);
     }
     else if (random1 == questions[2]) {
-        r3();
+        num = 2;
+        numcheck(num);
     }
     else if (random1 == questions[3]) {
-        r4();
+        num = 3;
+        numcheck(num);
     }
     else if (random1 == questions[4]) {
-        r5();
+        num = 4;
+        numcheck(num);
     }
     else if (random1 == questions[5]) {
-        r6();
+        num = 5;
+        numcheck(num);
     }
     else if (random1 == questions[6]) {
-        r7();
+        num = 6;
+        numcheck(num);
     }
     else if (random1 == questions[7]) {
-        r8();
+        num = 7;
+        numcheck(num);
+    }
+    else if (random1 == questions[8]) {
+        num = 8;
+        numcheck(num);
     }
     else {
-        rl();
+        num = 'last';
+        numcheck(num);
     }
     const random2 = questions[Math.floor(Math.random() * questions.length)];
     if (random2 == questions[0]) {
-        r1();
+        num = 'first';
+        numcheck(num);
     }
     else if (random2 == questions[1]) {
-        r2();
+        num = 1;
+        numcheck(num);
     }
     else if (random2 == questions[2]) {
-        r3();
+        num = 2;
+        numcheck(num);
     }
     else if (random2 == questions[3]) {
-        r4();
+        num = 3;
+        numcheck(num);
     }
     else if (random2 == questions[4]) {
-        r5();
+        num = 4;
+        numcheck(num);
     }
     else if (random2 == questions[5]) {
-        r6();
+        num = 5;
+        numcheck(num);
     }
     else if (random2 == questions[6]) {
-        r7();
+        num = 6;
+        numcheck(num);
+    }
+    else if (random2 == questions[7]) {
+        num = 7;
+        numcheck(num);
     }
     else {
-        rl();
+        num = 'last';
+        numcheck(num);
     }
     const random3 = questions[Math.floor(Math.random() * questions.length)];
     if (random3 == questions[0]) {
-        r1();
+        num = 'first';
+        numcheck(num);
     }
     else if (random3 == questions[1]) {
-        r2();
+        num = 1;
+        numcheck(num);
     }
     else if (random3 == questions[2]) {
-        r3();
+        num = 2;
+        numcheck(num);
     }
     else if (random3 == questions[3]) {
-        r4();
+        num = 3;
+        numcheck(num);
     }
     else if (random3 == questions[4]) {
-        r5();
+        num = 4;
+        numcheck(num);
     }
     else if (random3 == questions[5]) {
-        r6();
+        num = 5;
+        numcheck(num);
+    }
+    else if (random3 == questions[6]) {
+        num = 6;
+        numcheck(num);
     }
     else {
-        rl();
+        num = 'last';
+        numcheck(num);
     }
     const random4 = questions[Math.floor(Math.random() * questions.length)];
     if (random4 == questions[0]) {
-        r1();
+        num = 'first';
+        numcheck(num);
     }
     else if (random4 == questions[1]) {
-        r2();
+        num = 1;
+        numcheck(num);
     }
     else if (random4 == questions[2]) {
-        r3();
+        num = 2;
+        numcheck(num);
     }
     else if (random4 == questions[3]) {
-        r4();
+        num = 3;
+        numcheck(num);
     }
     else if (random4 == questions[4]) {
-        r5();
+        num = 4;
+        numcheck(num);
+    }
+    else if (random4 == questions[5]) {
+        num = 5;
+        numcheck(num);
     }
     else {
-        rl();
+        num = 'last';
+        numcheck(num);
     }
     const random5 = questions[Math.floor(Math.random() * questions.length)];
     if (random5 == questions[0]) {
-        r1();
+        num = 'first';
+        numcheck(num);
     }
     else if (random5 == questions[1]) {
-        r2();
+        num = 1;
+        numcheck(num);
     }
     else if (random5 == questions[2]) {
-        r3();
+        num = 2;
+        numcheck(num);
     }
     else if (random5 == questions[3]) {
-        r4();
+        num = 3;
+        numcheck(num);
+    }
+    else if (random5 == questions[4]) {
+        num = 4;
+        numcheck(num);
     }
     else {
-        rl();
+        num = 'last';
+        numcheck(num);
     }
     const random6 = questions[Math.floor(Math.random() * questions.length)];
     if (random6 == questions[0]) {
-        r1();
+        num = 'first';
+        numcheck(num);
     }
     else if (random6 == questions[1]) {
-        r2();
+        num = 1;
+        numcheck(num);
     }
     else if (random6 == questions[2]) {
-        r3();
+        num = 2;
+        numcheck(num);
+    }
+    else if (random6 == questions[3]) {
+        num = 3;
+        numcheck(num);
     }
     else {
-        rl();
+        num = 'last';
+        numcheck(num);
     }
     const random7 = questions[Math.floor(Math.random() * questions.length)];
     if (random7 == questions[0]) {
-        r1();
+        num = 'first';
+        numcheck(num);
     }
     else if (random7 == questions[1]) {
-        r2();
+        num = 1;
+        numcheck(num);
+    }
+    else if (random7 == questions[2]) {
+        num = 2;
+        numcheck(num);
     }
     else {
-        rl();
+        num = 'last';
+        numcheck(num);
     }
     const random8 = questions[Math.floor(Math.random() * questions.length)];
     if (random8 == questions[0]) {
-        r1();
+        num = 'first';
+        numcheck(num);
+    }
+    else if (random8 == questions[1]) {
+        num = 1;
+        numcheck(num);
     }
     else {
-        rl();
+        num = 'last';
+        numcheck(num);
     }
     const random9 = questions[Math.floor(Math.random() * questions.length)];
     if (random9 == questions[0]) {
-        r1();
+        num = 'first';
+        numcheck(num);
+    }
+    else {
+        num = 'last';
+        numcheck(num);
+    }
+    const random10 = questions[Math.floor(Math.random() * questions.length)];
+    if (random10 == questions[0]) {
+        num = 'first';
+        numcheck(num);
     }
     first.innerHTML = random1;
     second.innerHTML = random2;
@@ -289,10 +394,11 @@ function duplicate_check() {
     seventh.innerHTML = random7;
     eight.innerHTML = random8;
     ninth.innerHTML = random9;
+    tenth.innerHTML = random10;
 }
+duplicate_check();
 function change() {
     lo += 1;
     label2.innerHTML = label1_output[lo] + start_2;
     score += 1;
 };
-duplicate_check();
